@@ -8,47 +8,45 @@
 
     <title>Coop Info Sessions</title>
     
-    <!--libraries-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--libraries-->
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css">
     <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     
-    <!-- our script -->
+    <!-- info session script -->
     <script src="infosessions.js"></script>
 
 
 </head>
 <body>
+    <!-- /page -->
     <div data-role="page">
  
+        <!-- /header -->
         <div data-role="header">
             <h1>Upcoming Info Sessions</h1>
-        </div><!-- /header -->
+        </div>
 
-        <ul data-role="listview" data-inset="true" data-filter="true">
-            <br />
-    <li><a href="#">Twitter</a></li>
-    <li><a href="#">Facebook</a></li>
-    <li><a href="#">Ching Dynasty</a></li>
-    <li><a href="#">Raunaq</a></li>
-    <li><a href="#">Allen Chan</a></li>
+        <ul id='sessionList' data-role="listview" data-inset="true" data-filter="true">
+            <br/>
+            <button type="button" onclick="getList()"> Get List </button>
+            <button type="button" onclick="showList()"> Display List</button>
+            <button type="button" onclick="displayEmployers()"> Show Employers</button>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Ching Dynasty</a></li>
+            <li><a href="#">Raunaq</a></li>
+            <li>Allen Chan</li>
+        </ul>
 
-
- <button type="button" onclick="getList()"> Get List </button>
-    <button type="button" onclick="showList()"> Display List</button>
-    <button type="button" onclick="showEmployers()"> Show Employers</button>
-
-
-</ul>
-
- 
+        <!-- /footer -->
         <div data-role="footer">
             <h4>My Footer</h4>
-        </div><!-- /footer -->
+        </div>
  
-    </div><!-- /page -->
+    </div>
 </body>
 </html>
 
