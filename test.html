@@ -3,7 +3,7 @@
 
 <head>
 	<!--jQuery-->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
 	<!--info session script-->
 	<script src="js/infosessions.js"></script>
@@ -11,23 +11,32 @@
 	<!--css-->
 	<link rel="stylesheet" type="text/css" href="css/infosessions.css">
 
-	<title>UW Info Sessions</title>
+	<title>UW Coop Info Sessions</title>
 </head>
 
 <body>
 	
   	<center>
 
-  	<h1>COOP INFO SESSIONS TEST</h1>
+  	<div id="headContainer">
+  		<h2 id="header">University of Waterloo</h2>
+  		<h3 id="subheader">Upcoming Coop Info Sessions:</h3>
+  	</div>
 
-  	<h2>Upcoming Coop Info Sessions:</h2>
-
-
-  	<button type="button" onclick="logList()"> Console Log List</button>
+  	<!--hack to prevent blocking of list -->
+  	<h2 id="header">University of Waterloo</h2>
+  	<h3 id="subheader">Upcoming Coop Info Sessions:</h3>
 
   	<div id="sessionList">
 
-    <div>
+    </div>
+
+    <!--hack to prevent blocking of list -->
+    <h3 id="footer">Footer</h3>
+
+    <div id="footerContainer">
+    	<h3 id="footer">Footer</h3>
+    </div>
 
 	</center>
 </body>
