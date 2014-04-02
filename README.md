@@ -2,7 +2,7 @@ UW Coop Info Sessions
 ==================
 
 This is a simple web application developed by several University of Waterloo students.
-Ihe goal is to display upcoming University of Waterloo Coop Info Sessions in a clean and simple manner.
+The goal is to display upcoming University of Waterloo Coop Info Sessions in a clean and simple manner.
 
 To Do List:
 
