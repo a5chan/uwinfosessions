@@ -1,6 +1,6 @@
 var infoSession;
 var API_KEY=""; //put your own api key
-var URL="https://api.uwaterloo.ca/v2/resources/infosessions.json?key=602a2a826a9a807384b21050c40144fa"
+var URL="https://api.uwaterloo.ca/v2/resources/infosessions.json?key="
 var TEST_FILE="test.json";
 var itsdone = false
 var str;
