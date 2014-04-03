@@ -1,7 +1,12 @@
 var infoSession;
 var API_KEY=""; //put your own api key
-var URL="https://api.uwaterloo.ca/v2/resources/infosessions.json?key="
+var URL="https://api.uwaterloo.ca/v2/resources/infosessions.json?key=602a2a826a9a807384b21050c40144fa"
 var TEST_FILE="test.json";
+var itsdone = false
+var str;
+var audience;
+var audiencetemp;
+var arr = [];
 
 //get the JSON file
 function getJSON(){
@@ -14,9 +19,78 @@ function getJSON(){
 	});
 }
 
+function addcombobox(){
+var combo = document.getElementById("combo");
+	if(itsdone === false){
+
+var programs = new Array('NONE','MATH - Computer Science','ENG - Electrical', 'ENG - System Design');
+
+     for (var i = 0; i < programs.length; i++){
+
+    var option = document.createElement("option");
+
+    option.text = programs[i];
+    option.value = programs[i];
+    try {
+        combo.add(option, null); //Standard 
+    }catch(error) {
+    	
+        combo.add(option); // IE only
+
+    	}
+  itsdone = true
+		}
+	}
+
+
+}
+
+function combochange(){
+	str = (combo.options[combo.selectedIndex].value)
+	alert(str);
+
+	if(str === 'NONE'){
+	getJSON()
+		displaySessions();
+	}else{
+
+	$.getJSON((URL+API_KEY), function (data){
+    audience = data.data;
+   filtering()
+
+ 
+	});
+
+
+
+
+	}
+
+	
+}
 //display all info sessions
+
+function filtering(){
+
+	for(var i = 0; i < audience.length; i ++){
+		if(audience[i].programs.search(str) != -1){
+			arr.push(audience[i]);
+		}else{
+			audience.splice(i,1);
+		}
+	}
+	infoSession = arr;
+
+	displaySessions();
+	
+}
+
+
 function displaySessions(){
 	var sessionList = document.getElementById("sessionList");
+var e = document.getElementById("combo");
+
+document.getElementById("sessionList").innerHTML = "";
 
 	for (var i=infoSession.length - 1; i >= 0 ; i--){
 		//parent item div
@@ -71,7 +145,10 @@ function displaySessions(){
 		description.textContent = "Description: " + infoSession[i].programs;
 		childItem.appendChild(description);
 	}
-
+		infoSession = [];
+		audience = [];
+		arr = [];
 }
 
-getJSON();
+
+
