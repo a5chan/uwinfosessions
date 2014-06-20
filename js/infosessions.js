@@ -47,7 +47,7 @@ var programs = new Array('NONE','MATH - Computer Science','ENG - Electrical', 'E
 
 function combochange(){
 	str = (combo.options[combo.selectedIndex].value)
-	alert(str);
+	//alert(str);
 
 	if(str === 'NONE'){
 	getJSON()
